@@ -200,3 +200,20 @@ git push origin main
 # Publish updated Firestore security rules
 # → Firebase Console → Firestore → Rules → paste firestore.rules → Publish
 ```
+
+## Website
+
+The platform is hosted on **Netlify**, connected to GitHub for continuous deployment.
+
+| Property | Value |
+|---|---|
+| Source | repo root (`/`) |
+| Build command | `npm install` |
+| Publish directory | `.` |
+| Functions directory | `netlify/functions` |
+| Live URL | https://vortrexyn-premium-car-rental-system.com |
+
+## Links
+
+- Live Site: https://vortrexyn-premium-car-rental-system.com
+- GitHub: https://github.com/FarhanHossen/VORTREXYN-Premium-Car-Rental
