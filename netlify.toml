@@ -12,6 +12,12 @@
   # Install dependencies before deploying (picks up dotenv, sharp, express, etc.)
   command = "npm install"
 
+[build.environment]
+  # Firebase client-side API keys (AIza...) are intentionally public — security is
+  # enforced by Firebase Security Rules, not by key secrecy. Disable Netlify's
+  # ML-based heuristic scanner which incorrectly flags them as secrets.
+  SECRETS_SCAN_SMART_DETECTION_ENABLED = "false"
+
 [functions]
   # Use the ZISI bundler so that native Node.js modules like `sharp` are bundled
   # correctly for the AWS Lambda (Amazon Linux) environment that runs the functions.
