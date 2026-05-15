@@ -155,23 +155,6 @@ A full-stack multi-page web application for a premium car rental service. Users 
 └── screenshots/                      # README documentation screenshots
 ```
 
-## Firestore Collections
-
-| Collection | Purpose |
-|---|---|
-| `users/{uid}` | User profile (name, contact, license, photo base64) |
-| `pendingOrders/{uid}` | Transient booking in progress (cleared after confirmation) |
-| `orders` | All confirmed bookings (`userId` field for per-user filtering) |
-| `fleetOverrides/overrides` | Single doc `{vin: stockCount}` — overrides cars.json inStore |
-| `customCars` | Admin-added vehicles with AI-generated images |
-
-## Booking Flow
-
-1. **home.html** — user picks a car → navigates to `reservations.html#VIN`
-2. **reservations.html** — form pre-filled from `users/{uid}`; saves to `pendingOrders/{uid}`
-3. **orderConfirmation.html** — loads from `pendingOrders/{uid}`; writes to `orders`, decrements `fleetOverrides`, deletes pending, sends EmailJS confirmation
-4. **myReservations.html** — queries `orders` by userId; admin approves → user pays via PayPal → status becomes `paid`; cancel = mark cancelled + restore stock + send email
-
 ## Environment Variables
 
 | Variable | Purpose |
