@@ -174,16 +174,29 @@ A full-stack multi-page web application for a premium car rental service. Users 
 - **Cancellation template:** `template_ho59umh`
 - **Public key:** `T_E3Q6Fu5wJ5OmOMd`
 
-## Running Locally
+## Quick Start
 
 ```bash
-npm install
-npm start
+git clone https://github.com/FarhanHossen/VORTREXYN-Premium-Car-Rental.git
+cd VORTREXYN-Premium-Car-Rental
+npm install          # install dependencies
+npm start            # serves on http://localhost:5000
 ```
 
-Serves on port 5000.
+## Development
 
-## Important Manual Steps
+```bash
+# Install dependencies
+npm install
 
-- Publish `firestore.rules` via **Firebase Console → Firestore → Rules** after any rules changes
-- The `orders` + `userId` + `createdAt` composite Firestore index: Firebase will surface a link in the browser console on first query — click it to auto-create
+# Start local dev server (port 5000)
+npm start
+
+# Deploy to Netlify (via GitHub — push triggers auto-deploy)
+git add .
+git commit -m "your message"
+git push origin main
+
+# Publish updated Firestore security rules
+# → Firebase Console → Firestore → Rules → paste firestore.rules → Publish
+```
