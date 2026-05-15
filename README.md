@@ -109,23 +109,50 @@ A full-stack multi-page web application for a premium car rental service. Users 
 
 ```
 /
-├── index.html                    # Entry point — Login page
-├── server.js                     # Express server (static serving + DALL-E proxy)
-├── firestore.rules               # Firestore security rules
+├── index.html                        # Entry point — Login page
+├── server.js                         # Express server (static serving + DALL-E proxy)
+├── firestore.rules                   # Firestore security rules
+├── netlify.toml                      # Netlify build config, function routing, redirects
+├── serve.json                        # Clean URL config for static serving
+├── .env.example                      # Environment variable template
+├── package.json
+│
+├── netlify/
+│   └── functions/
+│       ├── generate-car-image.js     # Serverless proxy — OpenAI DALL-E 3
+│       └── generate-car-description.js # Serverless proxy — OpenAI GPT-4o-mini
+│
 ├── public/
-│   ├── home.html                 # Car listing / search dashboard
-│   ├── reservations.html         # Car detail + booking form
-│   ├── orderConfirmation.html    # Booking confirmation (writes to Firestore)
-│   ├── myReservations.html       # User reservation history + PayPal payment
-│   ├── profile.html              # User profile (photo stored as base64)
-│   ├── admin.html                # Admin dashboard (bookings, fleet, users, revenue)
-│   ├── signup.html               # Registration
-│   └── forgot.html               # Password reset
-├── assets/                       # Images (car photos, backgrounds, logo)
-├── screenshots/                  # Page screenshots for documentation
+│   ├── home.html                     # Car listing / search dashboard
+│   ├── reservations.html             # Car detail + booking form
+│   ├── orderConfirmation.html        # Booking confirmation (writes to Firestore)
+│   ├── myReservations.html           # User reservation history + PayPal payment
+│   ├── profile.html                  # User profile (photo stored as base64)
+│   ├── admin.html                    # Admin dashboard (bookings, fleet, users, revenue)
+│   ├── signup.html                   # Registration
+│   ├── forgot.html                   # Password reset
+│   ├── favicon.ico                   # Favicon assets
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── apple-touch-icon.png
+│   ├── icon-192.png                  # PWA icons
+│   └── icon-512.png
+│
+├── src/
+│   ├── css/style.css                 # Global styles
+│   └── js/app.js                     # Shared JS utilities
+│
+├── assets/
+│   ├── cars/                         # Vehicle type images (coupe, sedan, SUV, etc.)
+│   │   └── models/                   # Individual model images (290+ vehicles)
+│   ├── portfolio-screenshots/        # Marketing screenshots
+│   ├── bg.png … bg4.png              # Page background images
+│   └── vortrexyn-logo.png            # Brand logo
+│
 ├── data/
-│   └── cars.json                 # 625-car catalog
-└── package.json
+│   └── cars.json                     # 625-car catalog
+│
+└── screenshots/                      # README documentation screenshots
 ```
 
 ## Firestore Collections
