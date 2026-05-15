@@ -215,4 +215,4 @@ The platform is hosted on **Netlify**, connected to GitHub for continuous deploy
 
 ## Links
 
-- Live Site: https://vortrexyn-premium-car-rental-system.com
+- Website: https://vortrexyn-premium-car-rental-system.com
