@@ -1,0 +1,41 @@
+# ── netlify.toml — VORTREXYN Netlify Configuration ───────────────────────────
+# Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # The folder Netlify publishes as the static site.
+  # "." means the project root — index.html, public/, assets/, data/ all served.
+  publish = "."
+
+  # Where Netlify looks for serverless functions (replaces the Express /api/* routes).
+  functions = "netlify/functions"
+
+  # Install dependencies before deploying (picks up dotenv, sharp, express, etc.)
+  command = "npm install"
+
+[functions]
+  # Use the ZISI bundler so that native Node.js modules like `sharp` are bundled
+  # correctly for the AWS Lambda (Amazon Linux) environment that runs the functions.
+  node_bundler = "zisi"
+
+# ── API redirects ─────────────────────────────────────────────────────────────
+# These map the same /api/* paths used in the HTML files to Netlify Functions.
+# No changes needed in admin.html — the URLs stay identical.
+
+[[redirects]]
+  from   = "/api/generate-car-image"
+  to     = "/.netlify/functions/generate-car-image"
+  status = 200
+
+[[redirects]]
+  from   = "/api/generate-car-description"
+  to     = "/.netlify/functions/generate-car-description"
+  status = 200
+
+# ── Clean URL support ─────────────────────────────────────────────────────────
+# Allows /public/home to resolve to /public/home.html (mirrors Express behaviour).
+
+[[redirects]]
+  from   = "/public/:page"
+  to     = "/public/:page.html"
+  status = 200
+  force  = false   # Only applies when the .html file exists; skips if already .html

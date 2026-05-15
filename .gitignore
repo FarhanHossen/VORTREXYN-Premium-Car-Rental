@@ -1,0 +1,24 @@
+# Dependency folders
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Editor / IDE metadata
+.vscode/
+.idea/
+
+# Replit platform internals (not part of the project source)
+.replit
+replit.md
+.upm/
+.agents/
+.cache/
+.local/
