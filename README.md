@@ -90,14 +90,20 @@ A full-stack multi-page web application for a premium car rental service. Users 
 
 ## Tech Stack
 
-- **Frontend:** Vanilla HTML5 / JavaScript / CSS
-- **Styling:** Tailwind CSS (CDN)
-- **Auth & DB:** Firebase v9 Compat — email/password auth + Firestore
-- **Email:** EmailJS (booking confirmation + cancellation)
-- **Payments:** PayPal Live SDK (AUD)
-- **AI Images:** OpenAI DALL-E 3 (admin fleet management)
-- **Server:** Node.js + Express (static file serving + image generation proxy)
-- **Data:** Local JSON (`data/cars.json`) for catalog; all user data in Firestore
+| Layer | Technology |
+|---|---|
+| Frontend | HTML5, CSS3, Vanilla JavaScript |
+| Styling | Tailwind CSS (CDN) |
+| Auth | Firebase Authentication (email/password + Google OAuth) |
+| Database | Cloud Firestore |
+| Payments | PayPal Live SDK (AUD) |
+| AI — Images | OpenAI DALL-E 3 |
+| AI — Descriptions | OpenAI GPT-4o-mini |
+| Email | EmailJS |
+| Backend | Node.js + Express |
+| Serverless | Netlify Functions |
+| Data | JSON catalog (`data/cars.json`) |
+| Version Control | Git + GitHub |
 
 ## Project Structure
 
