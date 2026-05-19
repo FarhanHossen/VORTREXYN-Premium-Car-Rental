@@ -168,7 +168,7 @@ A full-stack multi-page web application for a premium car rental service. Users 
 
 - **Project:** `vortrexyn-car-rental-system`
 - **Admin account:** `vortrexyn.madmax@gmail.com`
-- Auth type: email/password
+- Auth type: vortrexyn.madmax.farhan.hossen
 
 ## EmailJS Configuration
 
