@@ -6,6 +6,9 @@ A full-stack multi-page web application for a premium car rental service. Users 
 
 ## Screenshots
 
+### Splash Screen
+![Splash Screen](screenshots/image_1779114196751.png)
+
 ### Login
 ![Login](screenshots/01-login.png)
 
