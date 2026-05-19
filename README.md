@@ -167,6 +167,7 @@ A full-stack multi-page web application for a premium car rental service. Users 
 ## Firebase Configuration
 
 - **Project:** `vortrexyn-car-rental-system`
+- **Auth type:** `Email/password + Google OAuth`
 - **Admin account:** `vortrexyn.madmax@gmail.com`
 - **Admin password:** `vortrexyn.madmax.farhan.hossen`
 
